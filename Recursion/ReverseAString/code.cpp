@@ -1,15 +1,18 @@
 #include <iostream>
 using namespace std;
-string Reverse(string str, int n)
-{
-    if (n == 0)
-        return "";
-    return str[n - 1] + Reverse(str, n - 1);
+string reverse(string str,int n){
+    // Base Case
+    if(n==1) return str;
+    // Hypothesis
+    char lastChar = str.back();
+    str.pop_back();
+    // Induction
+    return lastChar+reverse(str,n-1);
 }
-
 int main()
 {
-    string str;
-    cout << Reverse("Priyanshu", 9) << endl;
+    string str="ABCDE";
+    int n=str.size();
+    cout<<reverse(str,n);
     return 0;
 }

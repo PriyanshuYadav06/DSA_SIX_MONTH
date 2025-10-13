@@ -31,8 +31,7 @@ int main(){
     int n= arr.size();
     int k=(n/2)+1;
     display(arr);
-    // deleteMidEl(arr,k);
-    Delete(arr,k);
+    deleteMidEl(arr,k);
     display(arr);
     return 0;
 }

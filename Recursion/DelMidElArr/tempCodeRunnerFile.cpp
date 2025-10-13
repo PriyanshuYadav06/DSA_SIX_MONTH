@@ -1,0 +1,1 @@
+deleteMidEl(arr,k);

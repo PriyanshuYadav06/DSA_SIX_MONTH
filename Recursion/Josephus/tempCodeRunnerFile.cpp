@@ -1,0 +1,1 @@
+    cout<<josephus(40,7)+1<<endl;

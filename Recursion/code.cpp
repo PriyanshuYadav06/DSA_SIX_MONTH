@@ -3,29 +3,17 @@
 #include <cctype>
 #include <set>
 using namespace std;
-bool validPrefix(string str){
-    int co=0;
-    int cz=0;
-    for(int i=0;i<str.length();i++){
-        if(str[i]=='0') cz++;
-        else co++;
+int josephus(int n, int k){
+    // Base Case
+    if(n==1){
+        return 0;
     }
-    return co>cz;
-}
-void GeneratePrefix(string str,  vector<string>&ans){
-    for(int i=0;i<=str.length();i++){
-       if(validPrefix(str.substr(0,i))){
-        ans.push_back(str.substr(0,i));
-       }
-    }
+
+    return (josephus(n-1,k)+k)%n;
 }
 int main()
 {
-    cout << "Happy 5th Commit" << endl;
-    vector<string>ans;
-    GeneratePrefix("100",ans);
-    for(auto x : ans){
-        cout<<x<<endl;
-    }
+    cout << "Happy 6th Commit" << endl;
+    cout<<josephus(5,2)+1;
     return 0;
 }

@@ -1,0 +1,1 @@
+rn(josephus(n-1,k)+k)%n;

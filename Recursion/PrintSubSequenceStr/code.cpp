@@ -137,6 +137,6 @@ int main()
     //     cout << x << " ";
     // }
     // Permutaion With spaces
-    generateSubSeqWithSpace(str, "", 0);
+    generateSubsequencesCopy(str, "");
     return 0;
 }

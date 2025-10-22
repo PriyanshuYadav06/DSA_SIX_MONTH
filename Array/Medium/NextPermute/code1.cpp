@@ -3,8 +3,6 @@
 #include <vector>
 using namespace std;
 // Leetcode -> 31
-
-// Fully Brute Force Approach Here 
 void printMatrix(const vector<vector<int>>& matrix) {
     for (const auto& row : matrix) {
         for (int val : row) {
@@ -14,19 +12,16 @@ void printMatrix(const vector<vector<int>>& matrix) {
     }
     cout<<endl<<endl;
 }
-// returning the index of Next Permutation
 int FindNextPermute(vector<vector<int>>list, vector<int>nums){
     int idx=-1;
     int n= list.size();
     for(int i=0;i<n;i++){
         if(list[i]==nums){
             idx=i;
-            break;
         }
     }
     if(idx==n-1)  return  0 ; else  return  idx;
 }
-// Generating All Permutaions 
 void permute(vector<int> &nums, int idx, vector<vector<int>> &ans)
 {
 
@@ -48,7 +43,6 @@ int main()
 {
     vector<int> nums = {3, 1, 2};
     vector<int>temp=nums;
-    // Sorting for Lexogra order
     sort(nums.begin(),nums.end());
     vector<vector<int>> ans;
     permute(nums, 0, ans);

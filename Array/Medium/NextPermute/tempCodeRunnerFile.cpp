@@ -1,0 +1,1 @@
+ if(nums[j]>nums[i] )

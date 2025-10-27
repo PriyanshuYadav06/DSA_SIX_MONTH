@@ -2,34 +2,35 @@
 #include <map>
 #include<vector>
 using namespace std;
-// This is incomplete
-void CountAnagrams(string s1,string s2){
-    int n = s1.size();
-    int k = s2.size();
-    map<char,int>mp;
-    for (char c : s2)
-        mp[c]++;
-         int count = mp.size();
-    int i=0;
-    int j=0;
-    int ans = 0;
-    while(j<n){
-        if(mp.find(s1[j])!=mp.end()){
-            mp[s1[j]]--;
-            if(mp[s1[j]]==0)
-            count--;
-        }
-        if(j-i+1<k){
-            j++;
-        }
-        else if(j-i+1==k){
-            if(count ==0) ans++;
-
-        }
+void Display(vector<int>v){
+    int n= v.size();
+    for(int i=0;i<n;i++){
+        cout<<v[i]<<" ";
     }
-
+    cout<<endl;
+}
+void MaxOfAllSubArray(vector<int>nums,vector<int>&ans,int k){
+   int n = nums.size();
+   int i=0;
+   int j=0;
+   int maxi=INT_MIN;
+   while(j<n){
+    if(maxi<nums[j]){
+        maxi=nums[j];
+    }
+    if(j-i+1<k) j++;
+    if(j-i+1==k){
+        ans.push_back(maxi);
+        i++;
+        j++;
+    }
+   }
 }
 int main(){
-    CountAnagrams("aabaabaa","aaba");
+    vector<int>nums={1,3,-1,-3,5,3,6,7};
+    int k=3;
+    vector<int>ans;
+    MaxOfAllSubArray(nums,ans,k);
+    Display(ans);
     return 0;
 }

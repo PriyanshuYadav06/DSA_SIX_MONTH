@@ -6,6 +6,7 @@
 #include <unordered_map>
 #include <climits>
 using namespace std;
+// Leetcode -> 239
 void Display(vector<int> v)
 {
     int n = v.size();
@@ -15,8 +16,8 @@ void Display(vector<int> v)
     }
     cout << endl;
 }
-// not done
-void LSubStringNoRepeating (string str, int k)
+// its only works for +Ve Number
+void LSubStringKUnique(string str, int k)
 {
     int n = str.size();
     int i = 0;
@@ -52,6 +53,6 @@ int main()
 {
     string str = "aaaa";
     int k = 3;
-    LSubStringNoRepeating(str, k);
+    LSubStringKUnique(str, k);
     return 0;
 }
